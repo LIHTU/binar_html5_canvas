@@ -16,13 +16,11 @@ function canvasApp () {
 
 	var theCanvas = document.getElementById("canvasOne");
 	var ctx = theCanvas.getContext("2d");
-	var cWidth = theCanvas.style.width;
-	var cHeight = theCanvas.style.height;
-    cWidth = "900px";
-    cHeight = "600px";
+	var cWidth = 960;
+    var cHeight = 640;
 
   function drawScreen() {
-        console.log("in");
+
 		//background
 		ctx.globalAlpha = 1;
 		ctx.fillStyle = "#000000";
@@ -40,6 +38,14 @@ function canvasApp () {
         }
 
         var yPen = 0;
+        while (yPen < cHeight) {
+            yPen += 64;
+            ctx.beginPath();
+            ctx.moveTo(0, yPen);
+            ctx.lineTo(cWidth, yPen);
+            ctx.strokeStyle = "#ce761c";
+            ctx.stroke();
+        }
 
 
 	}
